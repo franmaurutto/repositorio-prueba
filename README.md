@@ -1,2 +1,3 @@
 # repositorio-prueba
-este es u repositorio de prueba
+este es un repositorio de prueba
+## titulo chiquitito
