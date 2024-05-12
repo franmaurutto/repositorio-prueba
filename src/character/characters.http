@@ -1,0 +1,53 @@
+### es un archivo q se coleccionan solicitudes http, estas solicitudes no se almacenan realmente sino q solamente es un archivo de tipo texto que contiene a las solicitudes 
+###  obtener todos los characters
+GET http://localhost:3000/api/characters
+
+
+###  obtener un character
+GET http://localhost:3000/api/characters/a02b91bc-3769-4221-beb1-d7a3aeba7dad
+
+
+### crear un nuevo character
+POST http://localhost:3000/api/characters
+Content-Type: application/json 
+
+{
+    "name": "Fran",
+    "characterClass": "hot",
+    "items": ["bow", "arrow"],
+    "attack": 10,
+    "mana":10,
+    "hp": 10,
+    "level": 1
+}
+
+
+### modificar un character
+### la diferencia entre put y patch es que put debe ser idempotente (no importa en q momento se ejecute ni cuantas veces, siempre vamos a tener el mismo resultado) y se usa para modificaciones completas y en el patch no es un requisito que sea idempotente y suele modificar un subconjunto de las propiedades. El patch tmb se usa para modificaciones incrementales, por ej, aumentar en un nivel el level, cosa que no se puede hacer con un put 
+### uso de PUT
+PUT http://localhost:3000/api/characters/a02b91bc-3769-4221-beb1-d7a3aeba7dad 
+Content-Type: application/json 
+
+{
+    "name": "El down de Anakin",
+    "characterClass": "Fallen Jedi",
+    "items": ["Lightsaber", "Death Star"],
+    "attack": 110,
+    "mana":500,
+    "hp": 100,
+    "level": 11
+}
+
+### uso de PATCH
+PATCH http://localhost:3000/api/characters/a02b91bc-3769-4221-beb1-d7a3aeba7dad 
+Content-Type: application/json 
+
+{
+    "name": "El down de Anakin",
+    "characterClass": "Fallen Jedi",
+    "items": ["Lightsaber", "X-Wing"],
+    "level": 12
+}
+
+### borrar un character
+DELETE http://localhost:3000/api/characters/a02b91bc-3769-4221-beb1-d7a3aeba7dad
