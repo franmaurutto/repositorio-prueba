@@ -1,3 +1,2 @@
 # repositorio-prueba
-este es un repositorio de prueba
-## titulo chiquitito
+este es el repo de la manera de hacer CRUD sin persistencia
